@@ -1,0 +1,84 @@
+Task#01;
+             Encapsulation:
+Input:
+package movies;
+
+public class Movies {
+private String title;
+private String director;
+private int releaseYear;
+public String getTitle() {
+return title;
+}
+public void setTitle(String title) {
+this.title = title;
+}
+public String getDirector() {
+return director;
+}
+public void setDirector(String director) {
+this.director = director;
+}
+public int getReleaseYear() {
+return releaseYear;
+}
+public void setReleaseYear(int releaseYear) {
+this.releaseYear = releaseYear;
+}
+public static void main(String[] args) {
+Movies myMovies = new Movies();
+myMovies.setTitle("Kabhi Kushi Kabhi Gham");
+myMovies.setDirector("Ambitah Bachan");
+myMovies.setReleaseYear(1986);
+System.out.println("Movie Title: " + myMovies.getTitle());
+System.out.println("Director: " + myMovies.getDirector());
+System.out.println("Release Year: " + myMovies.getReleaseYear());
+}
+}
+
+Task#02;
+              Inheritance:
+Input:
+package appliance;
+
+public class Appliance {
+private String brand;
+private String model;
+private int powerConsumption;
+public Appliance(String brand, String model, int powerConsumption) {
+this.brand = brand;
+this.model = model;
+this.powerConsumption = powerConsumption;
+}
+public String getBrand() {
+return brand;
+}
+public String getModel() {
+return model;
+}
+public int getPowerConsumption() {
+return powerConsumption;
+}
+
+public static void main(String[] args) {
+Refrigerator myFridge = new Refrigerator("Dawlence", "xyz", 500, 30); 
+System.out.println("Brand: " + myFridge.getBrand());
+System.out.println("Model: " + myFridge.getModel());
+System.out.println("Power Consumption: " + myFridge.getPowerConsumption() + " W");
+System.out.println("Capacity: " + myFridge.getCapacity() + " cu ft");
+}
+}
+public class Refrigerator extends Appliance {
+private int capacity;
+
+public Refrigerator(String brand, String model, int powerConsumption, int capacity) {
+super(brand, model, powerConsumption); // Call the superclass constructor
+this.capacity = capacity;
+}
+public int getCapacity() {
+return capacity;
+}
+public void setCapacity(int capacity) {
+this.capacity = capacity;
+}
+}
