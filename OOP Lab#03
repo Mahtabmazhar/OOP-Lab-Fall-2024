@@ -1,0 +1,112 @@
+Task#01
+package student;
+
+/**
+ *
+ * @author HOME
+ */
+public class Student {
+
+  String name;
+  String city;
+  int age;
+   public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("City: " + city);
+        System.out.println("Age: " + age);
+    }
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        Student s2 = new Student();
+        s1.name = "mehtab";
+        s1.city = "chakwaal";
+        s1.age = 20;
+         s2.name = "anabia";
+        s2.city = "islamabad";
+        s2.age = 12;
+         System.out.println("Student 1:");
+        s1.displayInfo();
+        System.out.println("\nStudent 2:");
+        s2.displayInfo();
+    }
+    
+}
+
+Task#02
+package area;
+
+/**
+ *
+ * @author HOME
+ */
+public class Area {
+
+   double length;
+    double width;
+    double calculateArea() {
+        return length * width;
+    }
+    public static void main(String[] args) {
+        Area area = new Area();
+        area.length = 23.0;
+         area.width = 9.0;
+         double result = area.calculateArea();
+         System.out.println("The area is: " + result);
+    }
+}
+
+Task#03
+package computer;
+
+/**
+ *
+ * @author HOME
+ */
+public class Computer {
+
+   String name;
+  String config;
+  int cost;
+    String os;
+     public void displayDetails() {
+        System.out.println("The company name is " + name);
+        System.out.println("The configuration is " + config);
+        System.out.println("Its Cost is " + cost);
+        System.out.println("Its operating System is " + os);
+    }
+    public static void main(String[] args) {
+       Computer myComputer = new Computer();
+       myComputer.name="lenovo";
+        myComputer.config="i8";
+        myComputer.cost=60000;
+        
+        myComputer.os="ios";
+        System.out.println(" computer details:");
+         myComputer.displayDetails();
+    }
+}
+
+Task#04
+package maxofthree;
+
+/**
+ *
+ * @author HOME
+ */
+public class Maxofthree {
+
+    
+    public static void main(String[] args) {
+        int num1 = 15;
+        int num2 = 20;
+        int num3 = 35;
+        int max = num1; 
+        if (num2 > max) {
+            max = num2; 
+        }
+        if (num3 > max) {
+            max = num3; 
+            System.out.println("The maximum number is: " + max);
+        }
+
+}
