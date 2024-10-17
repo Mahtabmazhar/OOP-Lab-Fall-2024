@@ -1,0 +1,95 @@
+Task#01:
+
+package printmahtab;
+/**
+ *
+ * @author Mehtab
+ */
+public class Printmahtab {
+/**
+* @param args the command line arguments
+*/
+public static void main(String[] args) {
+int rows = 7;
+int cols = 5;
+// Loop through each row for all letters together
+for (int i = 0; i < rows; i++) {
+// Print M
+for (int j = 0; j < cols; j++) {
+if (j == 0 || j == cols - 1 || (i == j && i <= rows / 2)) {
+System.out.print("*");
+} else {
+System.out.print(" ");
+}
+}
+System.out.print("   "); // Space between letters
+// Print A
+for (int j = 0; j < cols; j++) {
+if (i == 0 || i == rows / 2 || j == 0 || j == cols - 1) {
+System.out.print("*");
+} else {
+System.out.print(" ");
+}
+}
+System.out.print("   "); // Space between letters
+// Print H
+for (int j = 0; j < cols; j++) {
+if (j == 0 || j == cols - 1 || i == rows / 2) {
+System.out.print("*");
+} else {
+System.out.print(" ");
+}
+}
+System.out.print("   "); // Space between letters
+// Print T
+for (int j = 0; j < cols; j++) {
+if (i == 0 || j == cols / 2) {
+System.out.print("*");
+} else {
+System.out.print(" ");
+}
+}
+System.out.print("   "); // Space between letters
+// Print A (again)
+for (int j = 0; j < cols; j++) {
+if (i == 0 || i == rows / 2 || j == 0 || j == cols - 1) {
+System.out.print("*");
+} else {
+System.out.print(" ");
+}
+}
+System.out.print("   "); // Space between letters
+// Print B
+for (int j = 0; j < cols; j++) {
+if (j == 0 || (i == 0 || i == rows / 2 || i == rows - 1) || (j == cols - 1 && i != 0 && i != rows / 2 && i != rows - 1)) {
+System.out.print("*");
+} else {
+System.out.print(" ");
+}
+}
+// Move to the next row
+System.out.println();
+}
+}
+}
+
+Task#02:
+
+package laptop;
+import java.util.Scanner;
+public class Laptop {
+String brand;
+Laptop(String brand){
+this.brand =brand;
+}
+void displayBrand(String brand) {
+System.out.println("Laptop brand: " + brand);
+    }
+public static void main(String[] args) {
+System.out.println("Enter the Brand Name");
+Scanner sc = new Scanner(System.in);
+String brand = sc.nextLine();
+Laptop pc = new Laptop(brand);
+pc.displayBrand(brand);
+}
+}
