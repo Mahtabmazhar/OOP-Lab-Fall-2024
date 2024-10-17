@@ -1,0 +1,118 @@
+TASK#01
+package stringarray;
+
+/**
+ *
+ * @author Mehtab
+ */
+public class StringArray {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+    //declare and initiallize the array of strings
+    String[]fruits={"Apple","Banana","Orange","Mango","Grapes"};
+    //loop through an array using a for loop
+    for(int i=0;i<fruits.length;i++){
+    //print each element of the array
+    System.out.println(fruits[i]);
+    }
+    }
+}
+
+Task#02:
+
+package evenodd;
+
+/**
+ *
+ * @author Mehtab
+ */
+public class Evenodd {
+
+    /**
+     * @param args the command line arguments
+     */
+public static void main(String[] args) {
+int n=14;
+if(n%2==0){
+System.out.println("number is even");
+}
+else{
+System.out.println("number is odd");
+}
+}
+}
+
+Task#03:
+
+package evennumbers;
+
+/**
+ *
+ * @author Mehtab
+ */
+public class Evennumbers {
+
+    /**
+     * @param args the command line arguments
+     */
+public static void main(String[] args) {
+int number = 4;
+while (number <= 30) {
+if (number % 2 == 0) {
+System.out.println(number);
+}
+number++;
+}
+}
+}
+
+Task#04:
+
+package pattern;
+
+/**
+ *
+ * @author Mehtab
+ */
+public class Pattern {
+
+    /**
+     * @param args the command line arguments
+     */
+public static void main(String[] args) {
+int rows = 4; 
+int columns=6;
+for (int i = 0; i < rows; i++) {
+for (int j = 0; j <columns; j++) {
+System.out.print("* ");
+}
+System.out.println();
+}
+}
+}
+
+Task#05:
+
+package factorial;
+/**
+ *
+ * @author Mehtab
+ */
+public class Factorial {
+
+    /**
+     * @param args the command line arguments
+     */
+public static void main(String[] args) {
+int number = 9; 
+int factorial = 1; 
+while (number > 0) {
+factorial *= number; 
+number--;
+}
+System.out.println("The factorial is: " + factorial);
+}
+}
