@@ -1,0 +1,132 @@
+Task#01:
+package player;
+
+
+public class Player {
+    String playerName;
+   String position;
+   Player(String playerName, String position){
+    this.position=position;
+    this.playerName=playerName;}
+    void display()
+    {System.out.println("Player Name:"+playerName);
+    System.out.println("Player Position:"+position);
+    }
+    public static void main(String[] args) {
+        Player player1=new Player("MEHTAB","FOOTBALLER");
+        Player player2=new Player("Imran KHAN","DEFENDER");
+        Team team=new Team(player1,player2);
+        team.playerinfo();
+    }
+}	
+package player;
+
+
+public class Team {
+  
+Player player1;
+    Player player2;
+    Team(Player player1, Player player2) {
+        this.player1 = player1;
+        this.player2 = player2;
+    }
+    void addPlayers(Player player1,Player player2)
+    {this.player1=player1;
+    this.player2=player2;}
+    void playerinfo()
+            
+    {
+        System.out.println("Team Players:");
+        player1.display();
+    player2.display();}
+    }
+
+Task#02:
+package cpu;
+
+/**
+ *
+ * @author dell
+ */
+public class CPU {
+private String brand;
+    private String frequency;  // e.g., "3.6GHz"
+
+    // Constructor
+    public CPU(String brand, String frequency) {
+        this.brand = brand;
+        this.frequency = frequency;
+    }
+
+    // Display CPU details
+    public void displayDetails() {
+        System.out.println("CPU Brand: " + brand + ", Frequency: " + frequency);
+    }
+}
+   
+    package cpu;
+
+/**
+ *
+ * @author dell
+ */
+public class RAM {
+     String brand;
+    String capacity;  // e.g., "16GB"
+
+    // Constructor
+    public RAM(String brand, String capacity) {
+        this.brand = brand;
+        this.capacity = capacity;
+    }
+
+    // Display RAM details
+    public void displayDetails() {
+        System.out.println("RAM Brand: " + brand + ", Capacity: " + capacity);
+    }
+}
+public class hardDrive {
+      String brand;
+
+    // Constructor
+    public hardDrive(String brand, String capacity) {
+        this.brand = brand;
+        this.capacity = capacity;
+    }
+
+    // Display HardDrive details
+    public void displayDetails() {
+        System.out.println("Hard Drive Brand: " + brand + ", Capacity: " + capacity);
+    }
+}
+public class Computer {
+     CPU cpu;
+     RAM ram;
+  hardDrive hardDrive;
+
+    // Constructor initializes the components
+    public Computer(String cpuBrand, String cpuFrequency, String ramBrand, String ramCapacity, String hardDriveBrand, String hardDriveCapacity) {
+        this.cpu = new CPU(cpuBrand, cpuFrequency);
+        this.ram = new RAM(ramBrand, ramCapacity);
+        this.hardDrive = new hardDrive(hardDriveBrand, hardDriveCapacity);
+    }
+
+    // Method to display details of all components
+    public void displayComputerDetails() {
+        System.out.println("Computer Components:");
+        cpu.displayDetails();
+        ram.displayDetails();
+        hardDrive.displayDetails();
+    }
+}
+public class Main {
+     public static void main(String[] args) {
+        // Creating a Computer object and initializing its components
+        Computer computer = new Computer("DELL", "3.6GHz", "Corsair", "16GB", "Seagate", "1TB");
+
+        // Displaying details of the computer and its components
+        computer.displayComputerDetails();
+
+        
+    }
+}
