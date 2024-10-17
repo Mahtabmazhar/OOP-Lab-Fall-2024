@@ -1,0 +1,66 @@
+TASK 1:
+#include<iostream>
+using namespace std;
+class employee{
+	public:
+		string name;
+		string jobtitle;
+		float salary;
+	
+		void displayinfo(){
+			cout<<"The name of employee is:"<<endl;
+			cin>>name;
+			cout<<"The job title is:"<<endl;
+			cin>>jobtitle;
+			cout<<"The salary of employee is:"<<endl;
+			cin>>salary;
+		}
+		
+		void updatesalary(){
+			cout<<"The updated salary is:"<<endl;
+			cin>>salary;
+		}
+};
+int main()
+{
+	employee emp;
+
+    emp.displayinfo();
+	emp.updatesalary();
+	return 0;
+}
+
+TASK 2:
+#include<iostream>
+using namespace std;
+class car{
+	public:
+		string name;
+		string topspeed;
+	    string modelname;
+	car(){
+		name="H";
+		topspeed="18";
+		modelname="ABC";
+	}
+	void inputdetails()
+	{
+		cout<<"The car name:"<<endl;
+		getline(cin, name);
+		cout<<"The Topspeed:"<<endl;
+		cin>>topspeed;
+		cout<<"The model name:"<<endl;
+	cin>>modelname;
+	}
+	void displaydetails(){
+		cout<<"Vehicle name:"<<name<<endl;
+		cout<<"Top speed:"<<topspeed<<endl;
+		cout<<"Model name:"<<modelname<<endl;
+	}
+};
+int main(){
+	car mycar;
+	mycar.inputdetails();
+	mycar.displaydetails();
+	return 0;
+}
