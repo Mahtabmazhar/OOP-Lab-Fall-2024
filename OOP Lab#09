@@ -1,0 +1,108 @@
+Task#01:
+package bankaccount;
+
+//abstract class
+abstract class BankAccount {
+protected double balance;
+// Abstract method to calculate interest
+public abstract double calculateInterest();
+// Concrete method to show balance
+public void showBalance() {
+System.out.println("Current balance: $" + balance);
+}
+public void setBalance(double balance) {
+this.balance = balance;
+}
+class SavingAccount extends BankAccount {
+// Subclass SavingsAccount
+private static final double INTEREST_RATE = 0.04; // 4%
+@Override
+public double calculateInterest(){
+return balance * INTEREST_RATE;
+}
+}
+public class CurrentAccount extends BankAccount {
+private static final double INTEREST_RATE = 0.01; // 1%
+@Override
+public double calculateInterest() {
+return balance * INTEREST_RATE;
+}
+}
+public static void main(String[] args) {
+SavingAccount savingsAccount = new SavingAccount();
+CurrentAccount currentAccount = new CurrentAccount();
+
+savingsAccount.setBalance(100000.00);
+currentAccount.setBalance(80000.97);
+
+System.out.println("Savings Account Interest: $" + savingsAccount.calculateInterest());
+savingsAccount.showBalance();
+System.out.println("Current Account Interest: $" + currentAccount.calculateInterest());
+currentAccount.showBalance();
+}
+}
+
+Task#02:
+package paymentmethod;
+
+interface PaymentMethod {
+void pay(double amount);
+void refund(double amount);
+class CreditCard implements PaymentMethod {
+@Override
+public void pay(double amount){
+System.out.println("Processing creditcard payment of $ . " +amount);
+}
+@Override
+public void refund(double amount){
+System.out.println("Processing creditcard refund of $ . " +amount);
+}
+}
+class Paypal implements PaymentMethod{
+@Override
+public void pay(double amount){
+System.out.println("Processing paypal payment of $ . " +amount);
+}
+@Override
+public void refund(double amount){
+System.out.println("Processing paypal refund of $ ." +amount);
+}
+}
+public static void main(String[] args) {
+PaymentMethod creditCard = new CreditCard();
+PaymentMethod paypal = new Paypal();
+double amount = 1000.00;
+creditCard.pay(500.00);
+creditCard.refund(500.00);
+paypal.pay(350.00);
+paypal.refund(650.00);
+}
+}
+
+Task#03:
+package discountcalculator;
+
+public class DiscountCalculator {
+public double applyDiscount(double price, double discountPercent) {
+return price - (price * discountPercent / 100);
+}
+public double applyDiscount(double price, double discountPercent, double memberDiscount) {
+double discountPrice = applyDiscount(price, discountPercent);
+return discountPrice - (discountPrice * memberDiscount / 100);
+}
+public double applyDiscount(double price) {
+return applyDiscount(price, 5); // Calls the first method with 5% discount
+}
+public static void main(String[] args) {
+DiscountCalculator calculator = new DiscountCalculator();
+double price1 = 500.00;
+double discountPercent1 = 25.0;
+double memberDiscount = 10.0;
+double priceAfterDiscount = calculator.applyDiscount(price1, discountPercent1);
+System.out.println("Price after " + discountPercent1 + "% discount: $" + priceAfterDiscount);
+double priceAfterBothDiscounts = calculator.applyDiscount(price1, discountPercent1, memberDiscount);
+System.out.println("Price after " + discountPercent1 + "% discount and additional " + memberDiscount + "% member discount: $" + priceAfterBothDiscounts);
+double priceAfterDefaultDiscount = calculator.applyDiscount(price1);
+System.out.println("Price after default 5% discount: $" + priceAfterDefaultDiscount);
+}
+}
